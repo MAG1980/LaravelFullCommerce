@@ -9,28 +9,30 @@ import {
     SidebarHeader,
     SidebarMenu,
     SidebarMenuButton,
-    SidebarMenuItem,
+    SidebarMenuItem
 } from '@/components/ui/sidebar';
-import { dashboard } from '@/routes';
+import  {admin,  dashboard } from '@/routes/admin';
+import { index } from '@/routes/admin/users';
 import type { NavItem } from '@/types';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
     {
         title: 'Dashboard',
-        href: 'admin/dashboard',
-        icon: LayoutGrid,
+        // href: '/admin/dashboard',
+        href: dashboard(),
+        icon: LayoutGrid
     },
     {
         title: 'Users',
-        href: '/admin/users',
-        icon: Users,
+        href: index(),
+        icon: Users
     },
     {
         title: 'Admin',
-        href: '/admin/admins',
-        icon: User,
-    },
+        href: admin(),
+        icon: User
+    }
 ];
 
 export function AppSidebar() {
