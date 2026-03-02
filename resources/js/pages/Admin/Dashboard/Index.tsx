@@ -1,13 +1,5 @@
-import { Head, router, usePage } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
 import Layout from '@/layouts/app-layout';
-import DataTable from '@/components/DataTables/DataTable';
-import { TableColumn } from '@/components/DataTables/TableColumn.interface';
-import {
-    create,
-    destroy,
-    edit,
-    show,
-} from '@/actions/App/Http/Controllers/Admin/UserController';
 
 export default function UserIndex() {
 

@@ -11,8 +11,9 @@ import {
     SidebarMenuButton,
     SidebarMenuItem
 } from '@/components/ui/sidebar';
-import  {admin,  dashboard } from '@/routes/admin';
-import { index } from '@/routes/admin/users';
+import { dashboard } from '@/routes/admin';
+import { index as admins } from '@/routes/admin/admins';
+import { index as users } from '@/routes/admin/users';
 import type { NavItem } from '@/types';
 import AppLogo from './app-logo';
 
@@ -25,12 +26,12 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Users',
-        href: index(),
+        href: users(),
         icon: Users
     },
     {
         title: 'Admin',
-        href: admin(),
+        href: admins(),
         icon: User
     }
 ];

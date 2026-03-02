@@ -149,11 +149,11 @@ export default function DataTable({
             return (
                 <img
                     src={value}
-                    className="h-30 w-30"
+                    className="w-30"
                     alt={item.name}
                     onError={(e) => {
                         e.currentTarget.onerror = null;
-                        e.currentTarget.src = '/placeholder.png';
+                        e.currentTarget.src = '/placeholder.jpg';
                     }}
                 />
             );
@@ -461,7 +461,7 @@ export default function DataTable({
                 isOpen={showDeleteDialog}
                 onClose={() => setShowDeleteDialog(false)}
                 onConfirm={() => onDelete(itemToDelete?.id)}
-                message={`Are you sure you want to delete this ${resourceName.toLowerCase()}? This action cannot be undone`}
+                message={`Are you sure you want to delete this ${singularRName.toLowerCase()}? This action cannot be undone`}
                 // title={`Delete Item`}
                 title={`Delete ${resourceName.toLowerCase()}`}
                 confirmButtonText="Delete"

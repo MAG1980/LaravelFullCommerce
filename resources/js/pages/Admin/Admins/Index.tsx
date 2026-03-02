@@ -3,10 +3,10 @@ import { Users } from 'lucide-react';
 import DataTable from '@/components/DataTables/DataTable';
 import type { TableColumn } from '@/components/DataTables/TableColumn.interface';
 import Layout from '@/layouts/app-layout';
-import { index, destroy, create, show, edit } from '@/routes/admin/users';
+import { index, destroy, create, show, edit } from '@/routes/admin/admins';
 
-export default function UsersIndex() {
-    const { users, filters, can } = usePage().props;
+export default function AdminsIndex() {
+    const { admins, filters, can } = usePage().props;
     const columns: TableColumn[] = [
         {
             key: 'index',
@@ -17,6 +17,13 @@ export default function UsersIndex() {
             render: (item: any, index: number) => {
                 return (filters.page - 1) * filters.perPage + index + 1;
             },
+        },
+        {
+            key: 'avatar',
+            label: 'Avatar',
+            sortable: false,
+            type: 'image',
+            design:  'rec',
         },
         {
             key: 'name',
@@ -52,17 +59,17 @@ export default function UsersIndex() {
         });
     }
 
-    console.log({ users });
+    console.log({ admins });
     return (
         <Layout>
-            <Head title="Users" />
+            <Head title="Admins" />
             <div className="py-6">
                 <div className="mx-auto">
                     <DataTable
-                        data={users}
+                        data={admins}
                         columns={columns}
-                        resourceName="Users"
-                        singularRName="User"
+                        resourceName="Admins"
+                        singularRName="Admin"
                         routeName={index().url}
                         filters={filters}
                         canViewResource={true}

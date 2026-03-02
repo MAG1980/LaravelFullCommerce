@@ -15,7 +15,7 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'Admin',
+            'name' => 'Admins',
             'username' => 'admin',
             'avatar' => 'default.svg',
             'phone' => '123456789',
